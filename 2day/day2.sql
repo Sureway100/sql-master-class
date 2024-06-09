@@ -127,6 +127,31 @@ select * from customer
 -- how many customers are there with a first name that is 3 letters long and either an 'X' or a 'Y' as the last letter in the name?
 
 
+select payment_id as invoice_no from payment;
+-- this will change the column output but not the actual table column
+
+
+
+
+select count(*) as no_of_movies from film where description like '%Saga%' and 
+	(title like 'A%' or title like '%R');
+-- select count() as no_of_movies 
+-- how many movies are there that contain 'Saga' in the description and where the title starts either with 'A' or ends with 'R'
+-- use the alias 'no_of_movies'
+
+
+select * from customer where first_name like '%ER%' and first_name ilike '_A%' 
+	order by last_name desc;
+-- create a list of all customers where the first name contains 'ER' and has an 'A' as the second letter order the results by the 
+-- last name descendingly
+
+
+select count(*) from payment where (amount = 0 or amount between 3.99 and 7.99)
+	and payment_date between '2020-05-01' and '2020-05-03';
+-- how many payments are there where the amount is either 0 or is between 3.99 and 7.99 and in the same time has happened 
+-- on 2020-05-01
+
+
 
 
 
